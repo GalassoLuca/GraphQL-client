@@ -1,0 +1,19 @@
+{
+  "name": "graphql-client",
+  "version": "1.0.0",
+  "description": "GraphQL client in order to manage the query properly with the object",
+  "author": "Luca Galasso",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalassoLuca/graphQL-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GalassoLuca/graphQL-client/issues"
+  },
+  "homepage": "https://github.com/GalassoLuca/graphQL-client#readme"
+}
