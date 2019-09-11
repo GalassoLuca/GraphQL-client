@@ -4,10 +4,9 @@
   "description": "GraphQL client in order to manage the query properly with the object",
   "author": "Luca Galasso",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app/index.js"
   },
   "repository": {
     "type": "git",
