@@ -1,7 +1,3 @@
-const { readFileSync } = require('fs')
-const { join } = require('path')
-const readFile = path => readFileSync(join(__dirname, path), 'utf8')
-
 const { GraphQLClient } = require('graphql-request')
 const chalk = require('chalk')
 
@@ -11,7 +7,15 @@ const client = new GraphQLClient(endpoint)
 async function getBook (id) {
   console.log(chalk.bold(`getBook with ID ${id}`))
 
-  const query = readFile('get-book.gql')
+  const query = `
+    query getBook($id: Int!) {
+      book(id: $id) {
+        title
+        author
+        description
+      }
+    }`
+
   const variables = { id }
 
   return client.request(query, variables)
@@ -24,6 +28,4 @@ async function getBook (id) {
     })
 }
 
-(async () => {
-  await getBook(2)
-})()
+getBook(2)
