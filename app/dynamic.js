@@ -26,4 +26,6 @@ async function exec ({ query, variables }) {
 
 (async () => {
   await exec({ query: 'get-book', variables: { id: 2 } })
+
+  await exec({ query: 'get-books', variables: { author: 'Martin' } })
 })()
