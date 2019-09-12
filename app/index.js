@@ -8,15 +8,22 @@ const chalk = require('chalk')
 const endpoint = 'http://localhost:4000/graphql'
 const client = new GraphQLClient(endpoint)
 
-async function getCourceByID (courseID) {
-  console.log(chalk.bold(`getCourse with ID ${courseID}`))
+async function getBook (id) {
+  console.log(chalk.bold(`getBook with ID ${id}`))
 
-  const query = readFile('get-course.gql')
-  const variables = { courseID }
+  const query = readFile('get-book.gql')
+  const variables = { id }
 
-  const response = await client.request(query, variables)
-
-  console.log(JSON.stringify(response, null, 2))
+  return client.request(query, variables)
+    .then((response) => {
+      console.log(JSON.stringify(response, null, 2))
+    })
+    .catch(e => {
+      console.error(chalk.bold.red(' Error'))
+      console.error(JSON.stringify(e))
+    })
 }
 
-getCourceByID(2)
+(async () => {
+  await getBook(2)
+})()
