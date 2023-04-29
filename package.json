@@ -19,6 +19,6 @@
   "homepage": "https://github.com/GalassoLuca/graphQL-client#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "graphql-request": "^1.8.2"
+    "graphql-request": "^6.0.0"
   }
 }
